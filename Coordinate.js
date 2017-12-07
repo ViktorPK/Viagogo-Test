@@ -28,12 +28,14 @@ Coordinate.prototype.closest = function(array,a){
   eventsArray = mergeSort(eventsArray, this); //sort array based on closest events
 
   var j=0;
-
+  var returnList=[];
   //avoids crashes when less than 5 events
   while (j<5 && j<eventsArray.length){
-      console.log('Event' + eventsArray[j].event.id + ' - $' +eventsArray[j].event.findMin() + ', Distance ' +a.distance(eventsArray[j]));  // Prints clcosest events  (N.B could return an array if needed but unnecessary)
+      //console.log('Event' + eventsArray[j].event.id + ' - $' +eventsArray[j].event.findMin() + ', Distance ' +a.distance(eventsArray[j]));  // Prints clcosest events  (N.B could return an array if needed but unnecessary)
+      returnList.push('Event' + eventsArray[j].event.id + ' - $' +eventsArray[j].event.findMin() + ', Distance ' +a.distance(eventsArray[j]));
       j++;
   }
+  return returnList;
 }
 
 

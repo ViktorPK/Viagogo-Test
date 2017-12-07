@@ -39,7 +39,13 @@ rl.on('line', (coordinates) => {
           break;
         }
       }
-      userCoordinates.closest(grid.coordinates,userCoordinates); //find closest 5 events (if there are that many available)
+
+      const answer = userCoordinates.closest(grid.coordinates,userCoordinates); //find closest 5 events (if there are that many available) and store them in a constant
+
+      //print the answer
+      for (i=0;i<answer.length;i++){
+        console.log(answer[i]);
+      }
       rl.close();
     }
 }).on('close', () => {
